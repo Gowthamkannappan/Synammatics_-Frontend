@@ -10,13 +10,13 @@ import * as History from 'history';
 const history = History.createBrowserHistory();
 export const store = createStore(history);
 
-const root = ReactDOM.createRoot(document.getElementById(‘root’));
-root.render(
-  <Provider store={store}>
+ReactDOM.render(
+    <Provider store={store}>
         <ConnectedRouter history={history}>
             <App />
         </ConnectedRouter>
     </Provider>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
